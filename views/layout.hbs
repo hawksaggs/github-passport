@@ -16,12 +16,15 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Github</a>
       </div>
+      {{#if isLogin}}
       <ul class="nav navbar-nav">
         <li class="active">
           <a href="/users">Home</a>
         </li>
+        <li class="active">
+          <a href="/users/repos">Repo</a>
+        </li>
       </ul>
-      {{#if isLogin}}
       <a class="btn btn-danger navbar-btn" href="/auth/logout" style="float: right;">Logout</a>
       {{/if}}
     </div>

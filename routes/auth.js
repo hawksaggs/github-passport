@@ -10,7 +10,7 @@ router.get('/login', (req, res, next) => {
 });
 
 router.get('/logout', (req, res, next) => {
-    // req.session.destroy();
+    req.session.destroy();
     req.logout();
     res.redirect('/auth/login');
 });

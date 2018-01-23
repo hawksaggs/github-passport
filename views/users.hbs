@@ -5,17 +5,26 @@
         <tr>
             <th>Name</th>
             <th>Description</th>
-            <th>Fork Count</th>
-            <th>Link</th>
+            <th>Language</th>
+            <th>Repo Url</th>
         </tr>
     </thead>
     <tbody>
         {{#each items}}
         <tr>
             <td>{{this.name}}</td>
+            {{#if this.description}}
             <td>{{this.description}}</td>
-            <td>{{this.forks.count}}</td>
-            <td>{{this.homepage}}</td>
+            {{else}}
+            <td>-</td>
+            {{/if}} {{#if this.language}}
+            <td>{{this.language}}</td>
+            {{else}}
+            <td>-</td>
+            {{/if}}
+            <td>
+                <a href="{{this.html_url}}" alt="Repo Url">Link</a>
+            </td>
         </tr>
         {{/each}}
     </tbody>
